@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{css/mantenimiento.css}">
+    <title>mantenimiento chofer</title>
+</head>
+<body style="background-color: beige;">
+<!--header-->
+<nav id="header" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container-fluid">
+        <a id="" class="navbar-brand text-ethusac" href="#">
+            <img src="images/logosantanita.PNG" alt="logo" style="width:80px;" >
+            ETHUSAC
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" th:href="@{/login}">Guia del Sistema</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" th:href="@{/para}">Contactar a soporte</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main class="container-fluid" >
+    <section>
+        <div class="row">
+            <div id="ercolo"  class="col-lg-1 d-none d-sm-block .d-md-none .d-lg-block"  style="background-color: red;">
+                <a th:href="@{/menu}"><img src="images/atras.png"
+                                            style="width: 50px; height: 50px; margin-left: 25px; margin-top: 350px;"></a>
+            </div>
+            <div class="col-11">
+                <div id="menu" class="col-12 col-lg">
+                    <h2 id="titulo"  class="text-center text-primary">Mantenimiento de chofer</h2>
+                    <hr>
+                    <div class="row tex-center" id="icon">
+
+                        <button class="btn btn-info"  data-toggle="modal" data-target="#btnInsertar" >Insertar</button>
+
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Datos</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">chofer_id</th>
+                                            <th scope="col">nombres</th>
+                                            <th scope="col">apellidos</th>
+                                            <th scope="col">direccion</th>
+                                            <th scope="col">telefono</th>
+                                            <th scope="col">fec_ingreso</th>
+                                            <th scope="col">Editar</th>
+                                            <th scope="col">Eliminar</th>
+                                            <th scope="col">Moto</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr th:each="chofers : ${chofer}">
+                                            <th  th:text="${chofers.chofer_id}"></th>
+                                            <th  th:text="${chofers.nombres}"></th>
+                                            <td th:text="${chofers.apellidos}"></td>
+                                            <td th:text="${chofers.direccion}"></td>
+                                            <td th:text="${chofers.telefono}"></td>
+                                            <td th:text="${chofers.fec_ingreso}"></td>
+                                            <td>
+                                                <di>
+                                                    <a th:href="@{/chofer/edit/{id} (id = ${chofers.chofer_id})}">Editar</a>
+                                                </di>
+                                            </td>
+                                            <td>
+                                                <di>
+                                                    <a th:href="@{/chofer/delete/{id} (id = ${chofers.chofer_id})}">Eliminar</a>
+                                                </di>
+                                            </td>
+                                            <td>
+                                                <di>
+                                                    <a th:href="@{/chofer/{id}/motos  (id = ${chofers.chofer_id})}">Moto</a>
+                                                </di>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div id="derecho" class="col-lg-1 d-none d-sm-block .d-md-none .d-lg-block">
+
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- Modal Insertar-->
+
+<div class="modal fade" id="btnInsertar" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Insertar Chofer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form action="#" method="post"
+                      th:object="${chofer1}"
+                      th:action="@{/chofer/save}">
+
+                    <table>
+                        <tr>
+                            <td>nombres:</td>
+                            <td><input type="text" th:field="*{nombres}"></td>
+                        </tr>
+                        <tr>
+                            <td>apellidos:</td>
+                            <td><input type="text" th:field="*{apellidos}"></td>
+                        </tr>
+                        <tr>
+                            <td>direccion:</td>
+                            <td><input type="text" th:field="*{direccion}"></td>
+                        </tr>
+
+                        <tr>
+                            <td>fec_ingreso:</td>
+                            <td><input type="date" th:field="*{fec_ingreso}"></td>
+                        </tr>
+                        <tr>
+                            <td>telefono:</td>
+                            <td><input type="number" th:field="*{telefono}"></td>
+                        </tr>
+                        <tr class="pt-2">
+                            <td>
+                                <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Grabar</button>
+                            </td>
+                        </tr>
+
+                    </table>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="Js/index.js"></script>
+</body>
+</html>

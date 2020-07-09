@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="#" method="post"
+      th:object="${chofer}"
+      th:action="@{/chofer/save}">
+
+    <table>
+        <tr>
+            <td>nombres:</td>
+            <td><input type="text" th:field="*{nombres}"></td>
+        </tr>
+        <tr>
+            <td>apellidos:</td>
+            <td><input type="text" th:field="*{apellidos}"></td>
+        </tr>
+        <tr>
+            <td>direccion:</td>
+            <td><input type="text" th:field="*{direccion}"></td>
+        </tr>
+
+        <tr>
+            <td>fec_ingreso:</td>
+            <td><input type="date" th:field="*{fec_ingreso}"></td>
+        </tr>
+        <tr>
+            <td>telefono:</td>
+            <td><input type="number" th:field="*{telefono}"></td>
+        </tr>
+        <tr class="pt-2">
+            <td>
+                <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Grabar</button>
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+#derecho{
+    background-color: red;
+    height:  700px;
+}
+#menu{
+    background-color: beige;
+}
+#titulo{
+
+}
+hr { height: 2px; width: 50%; background-color: black; }
+
+#derecho1{
+    border:1px solid black;
+}
+#derecho2{
+
+    padding-bottom: 2px;
+}
+
+#derecho2 button{
+    width: 20vh;
+    border:1px solid black;
+    padding: 2vh;
+    margin-top:10mm;
+    margin-left: 15mm;
+}
+#principal{
+    height: 450px;
+}
+#over{
+    margin-top: 10mm;
+    border: 1px solid rgb(114, 153, 42);
+}
+#orizontal{
+    height: 105%;
+    width: 2px;
+
+    background-color: black;
+}
+#noticias{
+    background-color: beige;
+
+
+}
+
+#debajodelasnav{
+    background-color: beige;
+}
+

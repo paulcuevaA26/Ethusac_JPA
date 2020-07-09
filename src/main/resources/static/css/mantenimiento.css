@@ -1,0 +1,115 @@
+#derecho{
+    background-color: red;
+    height:  700px;
+}
+
+#menu{
+    background-color: beige;
+}
+#titulo{
+    padding-top: 7vh;
+}
+hr { height: 2px; width: 50%; background-color: black; }
+
+#derecho1{
+    border:1px solid black;
+}
+#derecho2{
+    padding-right: 60vh;
+
+    padding-top: 15vh;
+    padding-bottom: 2px;
+}
+#derecho2 button{
+    padding-top: 15vh;
+    margin: 8px;
+    width: 120%;
+    border:1px solid black;
+    padding: 2vh;
+
+}
+#principal{
+    height: 450px;
+}
+#over{
+    width: 60%;
+    height: 80%;
+    margin-left: 30vh;
+    border: 1px solid rgb(114, 153, 42);
+}
+#orizontal{
+    height: 105%;
+    width: 2px;
+    margin-right: 10px;
+    background-color: black;
+}
+
+
+
+#chr1{
+    border: 1px solid black;
+    background: linear-gradient(to bottom, white, red);
+}
+#chr2{
+    border: 1px solid black;
+    background: linear-gradient(to bottom, white, yellow);
+}
+#chr3{
+    border: 1px solid black;
+    background: linear-gradient(to bottom, white, green);
+}
+
+
+#menu-botones img{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 110px;
+    height: 100px;
+
+
+}
+
+#menu-botones button{
+    margin-top: 5vh;
+    width: 110px;
+}
+
+#contenido{
+
+    width: 1100px;
+    height: 550px;
+    margin-left: 10vh;
+}
+#late-izq{
+    padding-top: 20vh;
+
+}
+
+#late-izq button{
+    width: 100px;
+    height: 40px;
+    margin: 2vh;
+}
+
+#tmante{
+    margin-top: 5vh;
+    margin-left: 10mm;
+    margin-right: 10mm;
+
+}
+
+#icon{
+    margin-left: 10mm;
+    margin-right: 10mm;
+    height: 300px;
+}
+#icon img{
+    width: 50px;
+    height: 50px;
+
+}
+#icon button{
+    margin-top: 5mm;
+    margin-bottom: 2mm;
+
+}

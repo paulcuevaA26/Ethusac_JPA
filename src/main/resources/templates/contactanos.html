@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <title>Contactanos</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <a id="" class="navbar-brand text-ethusac" href="#">
+        <img src="images/logosantanita.PNG" alt="logo" style="width:80px;" >
+        ETHUSAC
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+                <a class="nav-link" th:href="@{/login}">Incio</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link"th:href="@{/para}">Nuestro Paradero</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-ethusac" th:href="@{/cont}"
+                >Contactanos</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container-fluid">
+
+    <div class="row " style="height: 600px;background-color: beige;"  >
+
+        <div class="d-none d-md-block col-lg-1" id="ercolo"></div><!-- Primercolumna roja -->
+        <div class="col col-lg-11 text-center" id="cuerpo">
+
+            <h2 class="text-ethusac text-center mt-4"><u>Contactanos</u></h2>
+            <p class="">Sus opiniones, comentario y sugerencia son bienvenidas ya que apartir de ellos podemos ofrecerle un mejor servicios</p>
+            <div class="row d-flex justify-content-center ml-2" >
+                <h6 id="ncomu" class="text-ethusac">Comunicate con nosotros</h6><br>
+                <div class="col-12" style="height:1px ">
+
+                </div>
+
+                <form id="formulario" class="">
+                    <div class="row">
+                        <div class="col-6 mb-2">
+                            <input type="text" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" placeholder="apellidos">
+                        </div>
+                        <div class="col-6  mb-2">
+                            <input type="text" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" placeholder="Telefono">
+                        </div>
+                        <div class="col-6 mb-2">
+                            <input type="text" class="form-control" placeholder="Direccion">
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control" placeholder="Distrito">
+                        </div>
+                        <div class="col-12 form-group">
+                            <label  >Envianos tus comentario</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-success col-12" id="btnEnviar">Enviar</button>
+                    </div>
+            </div>
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
+<!--cierre de container-fluid-->
+
+
+<footer id="footer" class="pb-4 pt-4">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12 col-md">
+                <a href="#">Preguntas frecuentes</a>
+            </div>
+            <div class="col-12 col-md">
+                <a href="">contactanos</a>
+            </div>
+            <div class="col-12 col-md">
+                <a href="">prensa</a>
+            </div>
+            <div class="col-12 col-md">
+                <a href="">Termino y condiciones</a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="Js/index.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB81yksmLJqWk6-O8Yo9J-RPu9yC52JWNY&callback=initMap">
+</script>
+<script src="Js/maps.js"></script>
+<script src="Js/localizacion.js"></script>
+
+</body>
+</html>

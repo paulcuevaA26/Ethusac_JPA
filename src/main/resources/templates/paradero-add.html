@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="#" method="post"
+      th:object="${paradero}"
+      th:action="@{/paradero/save}">
+
+    <table>
+        <tr>
+            <td>nombres:</td>
+            <td><input type="text" th:field="*{nombreParadero}"></td>
+        </tr>
+        <tr>
+            <td>capacidad:</td>
+            <td><input type="number" th:field="*{capacidadMotos}"></td>
+        </tr>
+        <tr>
+            <td>direccion:</td>
+            <td><input type="text" th:field="*{direccion}"></td>
+        </tr>
+
+        <tr>
+            <td>distrito:</td>
+            <td><input type="text" th:field="*{distrito}"></td>
+        </tr>
+        <tr class="pt-2">
+            <td>
+                <button type="button" class="btn btn-secondary"
+                        data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Grabar</button>
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+</body>
+</html>

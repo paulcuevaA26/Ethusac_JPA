@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{css/mantenimiento.css}">
+    <title>Pagina mantenimiento</title>
+</head>
+<body style="background-color: beige;">
+<!--header-->
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <a id="" class="navbar-brand text-ethusac" href="#">
+        <img src="images/logosantanita.PNG" alt="logo" style="width:80px;" >
+        ETHUSAC
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+                <a class="nav-link" th:href="@{/login}">Guia del Sistema</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" th:href="@{/para}">Contactar a soporte</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container-fluid" >
+    <section>
+        <div class="row">
+            <div id="ercolo"  class="col-lg-1 d-none d-sm-block .d-md-none .d-lg-block"  style="background-color: red;">
+                <a th:href="@{/menu}"><img src="images/atras.png"
+                                            style="width: 50px; height: 50px; margin-left: 25px; margin-top: 350px;"></a>
+            </div>
+            <div id="menu" class="col-12 col-lg">
+                <h2 id="titulo"  class="text-center text-primary">Mantenimiento de Base de datos</h2>
+                <hr>
+                <div class="row text-center" id="icon">
+                    <div class="col-12  col-lg mb-2 ml-2" id="chr1">
+                        <button class="btn btn-danger" ><a th:href="@{/chofer}">Chofer</a></button><br>
+                        <img src="images/driver.png" alt="chofer">
+                        <p>
+                            El chofer es una persona capacitada para conducir el
+                            mecanismo de dirección o va al mando de un
+                            vehículo de motor contratada para transportar
+                            a personas.
+                        </p>
+                    </div>
+                    <div class="col-12  col-lg mb-2 ml-2"  id="chr2">
+                        <button class="btn btn-warning text-white"><a th:href="@{/motos}">Moto</a></button><br>
+                        <img src="images/moto.png" alt="moto">
+                        <p>
+                            Mototaxi motocicleta de tres ruedas y con techo que
+                            se usa como medio de transporte popular para trechos
+                            cortos a cambio de dinero de la misma forma que un taxi.
+                        </p>
+                    </div>
+                    <div class="col-12  col-lg mb-2  ml-2 mr-2"  id="chr3">
+                        <button class="btn btn-success"><a th:href="@{/paradero}">Paradero</a></button><br>
+                        <img src="images/jefe.png" alt="jefe">
+                        <p>
+                            Directivo son los socios de la empresa Ethusac,
+                            que pueden registrar choferes y motos a la empresa,
+                            por medio de un pago de inscripcion.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div id="derecho" class="col-lg-1 d-none d-sm-block .d-md-none .d-lg-block">
+
+            </div>
+        </div>
+
+    </section>
+
+</main>
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" th:href="@{/login}">Cerrar sesión</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="Js/index.js"></script>
+</body>
+</html>

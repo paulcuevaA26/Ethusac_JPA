@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <title>Pagina Principal</title>
+</head>
+<body class="text-center">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <a id="" class="navbar-brand text-ethusac" href="#">
+        <img th:src="@{images/logosantanita.PNG}" alt="logo" style="width:80px;" >
+        ETHUSAC
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+                <a class="nav-link" th:href="@{/login}">Incio</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link"th:href="@{/para}">Nuestro Paradero</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-ethusac" th:href="@{/cont}"
+                >Contactanos</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid"  id="debajodelasnav">
+
+<div id="noticias" class="row" >
+
+    <!-- Primera Columnas -->
+    <div id="ercolo"  class="col-lg-1 d-none d-sm-block .d-md-none .d-lg-block" >
+
+    </div>
+    <!-- CIERRE Primera Columnas -->
+    <!-- SEGUNDA COLUMNA -->
+    <div  class="col-lg-6 d-none d-sm-block"  style="background-color: beige">
+        <div class="col-12" id="titulo">
+
+            <h3 id="ntitulo">ETHUSAC</h3>
+            <p id="ntitulo2" >
+                EMPRESA DE TRANSPORTE HUASCAR DE SANTA ANITA
+            </p>
+            <img th:src="@{images/parque.JPG}" class="rounded mb-2" alt="parque" id="foto" style="border: 2px solid cadetblue">
+
+            <div id="over" class="overflow-auto ">
+                La empresa de transporte de huascar Santa Anita es una empresa con mas 15 años
+                en el distrito de Santa Anita, actualmente tiene dos paraderos Mercado Huascar y Picina Huascar
+                La empresa esta liderada por el Gerente General Carlos Agusto, que actualmente ejercece derecho.
+                La empresa cuanta con mas de 20 choferes y 20 motos inscrito en la asociacion, cada mes ingresa 5 motorizados mensual.
+                La empresa tiene como objetivo liderar todo el paradero dentro de santa anita.
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-5">
+        <div  class="col-12">
+            <img id="foto2" src="images/lgoempresa.png" alt="logo de la empresa">
+                <form th:action="@{/login}" method="post" class="form-group mt-5">
+                    <div class="form-group">
+                        <label>Usuario</label>
+                        <input type="text" class="form-control" name="username" placeholder="username">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="password" placeholder="password">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Recordar</label>
+                    </div>
+                    <button class="btn btn-primary offset-10"><a  class="text-white" >Entrar</a></button>
+                </form>
+                <hr>
+                <div class="text-center">
+                    <a class="small" th:href="@{/registration}">¡Crea una cuenta!</a>
+                </div>
+        </div>
+    </div>
+
+
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

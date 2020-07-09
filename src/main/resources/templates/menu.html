@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/menu.css}">
+    <title>Menu</title>
+</head>
+<body>
+<!--header-->
+
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <a id="" class="navbar-brand text-ethusac" href="#">
+        <img src="images/logosantanita.PNG" alt="logo" style="width:80px;" >
+        ETHUSAC
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+                <a class="nav-link" th:href="@{/cont}">Guia del Sistema</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" th:href="@{/para}">Contactar a soporte</a>
+            </li>
+            <li>
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">Salir</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="row" style="background-color: beige; height: 900px;" >
+
+    <!-- Primera Columnas -->
+    <div id="ercolo"  class="col-lg-1 d-none d-sm-block .d-md-none .d-lg-block"  style="background-color: red;">
+    </div>
+    <!-- CIERRE Primera Columnas -->
+    <!-- SEGUNDA COLUMNA -->
+    <div  class="col-lg-11 col-12">
+
+        <div class="row">
+            <div class="col-12 mt-5 mb-5"style="height: 80px;">
+                <h2 id="titulo"  class="text-center mt-3">Bienvenido al Sistema Web</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="col-lg-6 col-12" >
+
+                <p>
+                <h6 class="text-center"><u><b>Descripcion</b></u></h6>
+                Bienvenido al sistema web en esta parte podra usted, hacer los siguientes servicios:<br>
+                <b> - Mantenimiento:</b>Te llevara a una pagina donde te mostraran todos los datos de la empresa como
+                chofer, moto, directivo. En esta sección podra manipular los datos como eliminar, actualizar y agregar nuevos integrantes a la empresa.<br>
+                <b> - Consulta:</b>Te llevara a una pagina donde podras realizar consultas como: consultar chofer que tienen deuda en la inscripcion, choferes que fueron
+                aceptado en la asociacion y consultar que choferes fueron inscripto y quien lo asocio.<br>
+                <b> - Graficos</b>Te llevara a una pagina donde podras ver graficos de los choferes por paraderos, choferes que cancelaron su deuda. El grafico será de manera estatica.
+                </p>
+
+            </div>
+
+            <div class="col-lg-6 col-12"  id="derecho2">
+                <button class="btn btn-info"  data-toggle="modal" data-target="#btnMantenimiento">Matenimiento</button><br>
+                <button class="btn btn-warning"><a th:href="@{/consult}">Consultas</a></button><br>
+                <button class="btn btn-success"><a th:href="@{/menuadmins}">Graficos</a></button>
+
+
+            </div>
+        </div>
+
+    </div>
+    <!-- CIERRE DE LA SEGUNDA columna -->
+
+
+</div>
+<!-- Modal Insertar-->
+
+<div class="modal fade" id="btnMantenimiento" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Ingresar Mantenimiento</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form action="#" method="post">
+
+                    <table>
+                        <tr>
+                            <td>Clave de Acesso:</td>
+                            <td><input type="text" ></td>
+                        </tr>
+
+                        <tr class="pt-2">
+                            <td>
+                                <a class="btn btn-primary" th:href="@{/mans}">Iniciar</a>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">¿Listo para salir?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Seleccione "Cerrar sesión" a continuación si está listo para finalizar su sesión actual.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <form class="form-inline my-2 my-lg-0" th:action="@{/logout}">
+                    <button class="btn btn-primary" type="submit">Cerrar sesión</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="Js/index.js"></script>
+</body>
+</html>
