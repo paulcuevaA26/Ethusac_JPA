@@ -70,31 +70,22 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Numero</th>
                                     <th>Nombre</th>
                                     <th>Apellidos</th>
+                                    <th>telefono</th>
                                     <th>Placa</th>
-                                    <th>Modelo</th>
+                                    <th>soat</th>
                                     <th>Color</th>
                                 </tr>
                                 </thead>
 
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Paul Terry</td>
-                                    <td>Cueva Aguilar</td>
-                                    <td>XFQ-785</td>
-                                    <td>Honda</td>
-                                    <td>Celeste</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Carlos</td>
-                                    <td>Kong</td>
-                                    <td>XFQ-666</td>
-                                    <td>Honda</td>
-                                    <td>Celeste</td>
+                                <tr th:each="chofers : ${chofermoto}">
+                                    <th  th:text="${chofers.nombres}"></th>
+                                    <td th:text="${chofers.apellidos}"></td>
+                                    <td th:text="${chofers.telefono}"></td>
+                                    <td th:text="${chofers.placa}"></td>
+                                    <td th:text="${chofers.color}"></td>
                                 </tr>
                                 </tbody>
                             </table>

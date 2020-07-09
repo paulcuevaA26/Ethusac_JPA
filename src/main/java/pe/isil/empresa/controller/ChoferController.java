@@ -6,14 +6,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import pe.isil.empresa.dto.ChoferMoto;
 import pe.isil.empresa.model.Chofer;
 import pe.isil.empresa.model.Moto;
+import pe.isil.empresa.repository.ChoferRepository;
 import pe.isil.empresa.service.ChoferService;
 import pe.isil.empresa.service.ChoferServiceImpl;
 import pe.isil.empresa.service.MotoService;
 import pe.isil.empresa.service.MotoServiceImpl;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -25,6 +28,9 @@ public class ChoferController {
 
     @Autowired
     private MotoServiceImpl motoServiceImpl;
+
+    @Autowired
+    private ChoferRepository choferRepository;
 
     @GetMapping("/chofer")
     public String getAllChofer(Model model){
@@ -92,6 +98,14 @@ public class ChoferController {
         return "redirect:/chofer/"+id+"/motos";
     }
 
+    @GetMapping("/consult")
+    public String getmotochofer(Model model){
+
+    model.addAttribute("chofermoto", choferRepository.getchofermoto());
+        System.out.println(" Esta es :" +  choferRepository.getchofermoto());
+    return "consultas";
+
+    }
 
 
 
