@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -47,11 +48,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/images/**",
                 "/js/**",
                 "/h2-console/**",
-                "/registration"
+                "/registration",
+                "/api/**",
+                "/templates"
         };
 
         http.authorizeRequests()
-                .antMatchers(staticResources).permitAll()
+                .antMatchers(HttpMethod.GET,staticResources).permitAll()
+                .antMatchers(HttpMethod.POST,staticResources).permitAll()
+                .antMatchers(HttpMethod.PUT,staticResources).permitAll()
+                .antMatchers(HttpMethod.DELETE,staticResources).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -64,9 +70,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                         .logoutSuccessUrl("/login.html?logout")
                 .and()
-                    .csrf().ignoringAntMatchers("/h2-console/**")
-                .and()
-                    .headers().frameOptions().sameOrigin()
+//                    .csrf().ignoringAntMatchers("/h2-console/**")
+                .csrf().disable()
+//                .and()
+//                    .headers().frameOptions().sameOrigin()
                 ;
 
     }

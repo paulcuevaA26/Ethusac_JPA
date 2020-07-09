@@ -13,7 +13,6 @@ import java.util.Set;
 @Table(name = "tbl_moto")
 @Entity
 public class Moto {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer moto_id;
@@ -27,15 +26,9 @@ public class Moto {
     private String marca;
     @Column
     private String soat;
-
     @ManyToMany
     private Set<Chofer> chofer;
-
-
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "paradero_id")
     private Paradero paradero;
-
-
-
 }
